@@ -1,0 +1,27 @@
+/* Wariant A — „Świeca" (oryginał z 02-design.md).
+   Medieval, dostojny, świeca w zamku. */
+:root {
+  --bg-primary:    #0f0e0c;
+  --bg-secondary:  #1a1815;
+  --bg-elevated:   #25211c;
+  --bg-surface:    #2b2823;
+
+  --fg-primary:    #e8dfd0;
+  --fg-secondary:  #a89e8a;
+  --fg-muted:      #6e6557;
+  --fg-faint:      #4a4238;
+
+  --accent:        #c89d4a;
+  --accent-hover:  #d4aa5a;
+  --accent-dim:    rgba(200, 157, 74, 0.15);
+
+  --moss:          #4a5d3a;
+  --blood:         #7a2a2a;
+  --rust:          #8a4a2a;
+
+  --border-subtle: #35302a;
+  --border-medium: #48423a;
+  --border-strong: var(--accent);
+
+  --theme-name:    "swieca";
+}

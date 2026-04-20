@@ -1,0 +1,28 @@
+/* Wariant C — „Krew i kamień".
+   Dramat, Highland gotyk, tartan blood.
+   Głęboka czerń + ciemna czerwień + chłodne szarości kamienia. */
+:root {
+  --bg-primary:    #0c0a0a;
+  --bg-secondary:  #16100f;
+  --bg-elevated:   #1f1615;
+  --bg-surface:    #261a19;
+
+  --fg-primary:    #ebe3db;
+  --fg-secondary:  #9d9088;
+  --fg-muted:      #675d57;
+  --fg-faint:      #3f3935;
+
+  --accent:        #8e3a3a;
+  --accent-hover:  #a14848;
+  --accent-dim:    rgba(142, 58, 58, 0.18);
+
+  --moss:          #4a6144;
+  --blood:         #5c1f1f;
+  --rust:          #7a3a26;
+
+  --border-subtle: #2b2120;
+  --border-medium: #3f2f2e;
+  --border-strong: var(--accent);
+
+  --theme-name:    "krew";
+}

@@ -1,101 +1,73 @@
-import Image from "next/image";
+import Link from "next/link";
+import { MapPin, UtensilsCrossed, Train, Info } from "lucide-react";
+import { CurrentStatus } from "@/components/timeline/CurrentStatus";
+import { Divider } from "@/components/ui/Divider";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Ornament } from "@/components/layout/Ornament";
+
+const quickLinks = [
+  { href: "/places", icon: MapPin, label: "Miejsca", description: "6 atrakcji" },
+  { href: "/food", icon: UtensilsCrossed, label: "Jedzenie", description: "3 opcje lunchu" },
+  { href: "/transport", icon: Train, label: "Transport", description: "Tramwaj EDI" },
+  { href: "/tips", icon: Info, label: "Porady", description: "Waluta, pogoda, język" },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="relative max-w-[560px] mx-auto px-5 pt-12 pb-12 fade-in">
+      <Ornament variant="knot" position="top-left" size={36} opacity={0.14} />
+      <Ornament variant="thistle" position="top-right" size={36} opacity={0.14} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="text-center pt-6">
+        <Eyebrow>One Day Guide</Eyebrow>
+        <h1 className="hero-title mt-4">Edynburg</h1>
+        <p className="italic-subtitle mt-3 max-w-xs mx-auto">
+          Jeden dzień. Sześć miejsc. Jedna historia.
+        </p>
+      </section>
+
+      <Divider ornament="star" />
+
+      <section>
+        <CurrentStatus />
+      </section>
+
+      <Divider ornament="thistle" />
+
+      <section>
+        <div className="mb-4">
+          <Eyebrow>Szybki dostęp</Eyebrow>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className="grid grid-cols-2 gap-3">
+          {quickLinks.map(({ href, icon: Icon, label, description }) => (
+            <Link
+              key={href}
+              href={href}
+              className="group flex flex-col items-start gap-2 p-4 border border-border-subtle bg-bg-secondary rounded-lg hover:border-accent transition-colors min-h-[108px]"
+            >
+              <Icon
+                size={22}
+                strokeWidth={1.5}
+                className="text-fg-muted group-hover:text-accent transition-colors"
+                aria-hidden
+              />
+              <div>
+                <p className="font-display text-lg leading-tight group-hover:text-accent transition-colors">
+                  {label}
+                </p>
+                <p className="text-xs text-fg-muted mt-0.5">{description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <Divider ornament="cross" />
+
+      <footer className="text-center text-xs text-fg-muted">
+        <p className="font-mono tracking-wider">08:50 — 19:20</p>
+        <p className="mt-1 italic font-display">Personal · Private · Offline-ready</p>
       </footer>
-    </div>
+    </main>
   );
 }
