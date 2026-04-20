@@ -42,6 +42,13 @@ export function TimelineEvent({
           {event.notes && (
             <p className="text-xs text-fg-muted mt-1 italic">{event.notes}</p>
           )}
+          {event.stopUrl && (
+            <div className="mt-2 text-xs">
+              <MapLink fullUrl={event.stopUrl} variant="text">
+                {event.stopName ?? "Mapa przystanku"}
+              </MapLink>
+            </div>
+          )}
         </div>
       </li>
     );

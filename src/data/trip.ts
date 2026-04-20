@@ -4,9 +4,9 @@
  * ale ich uzupełnienie uczyni ekran Home bardziej osobistym.
  */
 export const trip = {
-  date: "", // np. "12 maja 2026" lub zostaw pusty
-  groupSize: 0, // 3 lub 4
-  airline: "", // np. "Ryanair", opcjonalne
+  date: "24 kwietnia 2026",
+  groupSize: 4,
+  airline: "",
   castleSlot: "14:30",
   flightArrive: "08:50",
   flightDepart: "19:20",

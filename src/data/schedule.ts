@@ -10,6 +10,9 @@ export const schedule: ScheduleEvent[] = [
     duration: 50,
     type: "transit",
     notes: "Bagaże, kontrola, przejście do tramwaju przy terminalu.",
+    stopName: "Edinburgh Airport Tram Stop",
+    stopUrl:
+      "https://www.google.com/maps/search/?api=1&query=Edinburgh+Airport+Tram+Stop",
   },
   {
     id: "tram-to-city",
@@ -21,6 +24,9 @@ export const schedule: ScheduleEvent[] = [
     type: "transit",
     price: "£7.50",
     notes: "Wysiadacie na York Place (ostatni przystanek w centrum).",
+    stopName: "York Place Tram Stop",
+    stopUrl:
+      "https://www.google.com/maps/search/?api=1&query=York+Place+Tram+Stop+Edinburgh",
   },
   {
     id: "walk-to-calton",
@@ -82,12 +88,15 @@ export const schedule: ScheduleEvent[] = [
     bufferMinutes: 5,
   },
   {
-    id: "walk-to-victoria",
+    id: "royal-mile",
     timeStart: "13:00",
     timeEnd: "13:15",
-    title: "Royal Mile → Victoria Street",
+    title: "Royal Mile",
+    subtitle: "Spacer przez closes do Victoria Street",
     duration: 15,
-    type: "transit",
+    type: "attraction",
+    placeId: "royal-mile",
+    price: "Bezpłatne",
     notes:
       "Po drodze zajrzyjcie w boczne closes — Advocate's Close ma fotogeniczny widok na zamek.",
   },
@@ -131,6 +140,9 @@ export const schedule: ScheduleEvent[] = [
     duration: 15,
     type: "transit",
     notes: "Johnston Terrace → Lothian Road → przystanek West End.",
+    stopName: "West End Tram Stop",
+    stopUrl:
+      "https://www.google.com/maps/search/?api=1&query=West+End+Tram+Stop+Edinburgh",
   },
   {
     id: "tram-back",
@@ -141,6 +153,9 @@ export const schedule: ScheduleEvent[] = [
     duration: 40,
     type: "transit",
     price: "£7.50",
+    stopName: "West End Tram Stop",
+    stopUrl:
+      "https://www.google.com/maps/search/?api=1&query=West+End+Tram+Stop+Edinburgh",
   },
   {
     id: "airport-wait",

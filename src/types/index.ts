@@ -13,6 +13,8 @@ export interface ScheduleEvent {
   notes?: string;
   bufferMinutes?: number;
   ticketRequired?: boolean;
+  stopUrl?: string;
+  stopName?: string;
 }
 
 export interface PlaceSection {
