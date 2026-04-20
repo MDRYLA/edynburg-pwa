@@ -34,7 +34,11 @@ export function PlaceHero({ place }: { place: Place }) {
         )}
       </div>
       <div className="mt-6 max-w-xs mx-auto">
-        <MapLink fullUrl={place.googleMapsUrl} directions>
+        <MapLink
+          fullUrl={place.googleMapsUrl}
+          destinationName={place.nameEn}
+          directions
+        >
           Nawiguj do miejsca
         </MapLink>
       </div>
