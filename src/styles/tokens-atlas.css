@@ -26,3 +26,32 @@
 
   --theme-name:    "atlas";
 }
+
+/* Wariant jasny — „Mapa za dnia". Papier kartograficzny w świetle dziennym:
+   kremowy beż ze śladem zieleni, atramentowy granat jako tekst,
+   przygaszone matowe złoto jako akcent. */
+:root[data-theme="light"] {
+  --bg-primary:    #ede4ce;
+  --bg-secondary:  #e3d9bf;
+  --bg-elevated:   #d8cda9;
+  --bg-surface:    #ccbf94;
+
+  --fg-primary:    #0f172a;
+  --fg-secondary:  #2a3a5c;
+  --fg-muted:      #5a6a85;
+  --fg-faint:      #8a95ab;
+
+  --accent:        #8a6224;
+  --accent-hover:  #6e4d18;
+  --accent-dim:    rgba(138, 98, 36, 0.14);
+
+  --moss:          #3e6b5a;
+  --blood:         #6a2f3a;
+  --rust:          #7a5632;
+
+  --border-subtle: #c9ba8e;
+  --border-medium: #a89870;
+  --border-strong: var(--accent);
+
+  --theme-name:    "atlas-light";
+}
