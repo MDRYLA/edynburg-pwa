@@ -223,4 +223,15 @@ export const places: Record<string, Place> = {
   },
 };
 
-export const placesList: Place[] = Object.values(places);
+const visitOrder = [
+  "calton-hill",
+  "scott-monument",
+  "st-giles-cathedral",
+  "royal-mile",
+  "victoria-street",
+  "edinburgh-castle",
+];
+
+export const placesList: Place[] = visitOrder
+  .map((slug) => places[slug])
+  .filter((p): p is Place => Boolean(p));
