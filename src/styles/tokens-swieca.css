@@ -25,3 +25,31 @@
 
   --theme-name:    "swieca";
 }
+
+/* Wariant jasny — pergamin / stary papier. Zachowuje charakter „Świecy",
+   tylko w odwróconej tonacji: ciepła kość + atramentowy tekst + przygaszony bursztyn. */
+:root[data-theme="light"] {
+  --bg-primary:    #f5ecd7;
+  --bg-secondary:  #ede2c9;
+  --bg-elevated:   #e4d7ba;
+  --bg-surface:    #dccaa6;
+
+  --fg-primary:    #1f1a10;
+  --fg-secondary:  #4a3f2e;
+  --fg-muted:      #7a6d58;
+  --fg-faint:      #a89878;
+
+  --accent:        #8a6322;
+  --accent-hover:  #6f4f1a;
+  --accent-dim:    rgba(138, 99, 34, 0.14);
+
+  --moss:          #5a6b3d;
+  --blood:         #7a2a2a;
+  --rust:          #8a4a2a;
+
+  --border-subtle: #d4c4a0;
+  --border-medium: #b8a477;
+  --border-strong: var(--accent);
+
+  --theme-name:    "swieca-light";
+}

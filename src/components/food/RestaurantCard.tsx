@@ -51,7 +51,11 @@ export function RestaurantCard({ restaurant, recommended }: Props) {
       </div>
       <p className="text-xs text-fg-muted mt-4 font-mono">{restaurant.address}</p>
       <div className="mt-4">
-        <MapLink fullUrl={restaurant.googleMapsUrl} directions={recommended}>
+        <MapLink
+          fullUrl={restaurant.googleMapsUrl}
+          destinationName={`${restaurant.name}, Edinburgh`}
+          directions={recommended}
+        >
           {recommended ? "Nawiguj tam" : "Zobacz na mapie"}
         </MapLink>
       </div>

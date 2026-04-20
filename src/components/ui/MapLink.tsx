@@ -7,6 +7,7 @@ interface Props {
   placeId?: string;
   query?: string;
   fullUrl?: string;
+  destinationName?: string;
   directions?: boolean;
   variant?: "button" | "text";
   children?: ReactNode;
@@ -17,6 +18,7 @@ export function MapLink({
   placeId,
   query,
   fullUrl,
+  destinationName,
   directions = false,
   variant = "button",
   children,
@@ -24,11 +26,18 @@ export function MapLink({
 }: Props) {
   const id = placeId ?? (fullUrl ? extractPlaceId(fullUrl) : null);
   let url: string;
-  if (id && directions) url = mapDirectionsUrl(id);
-  else if (id) url = mapPlaceUrl(id);
-  else if (query) url = mapSearchUrl(query);
-  else if (fullUrl) url = fullUrl;
-  else url = mapSearchUrl("Edinburgh");
+  if (directions) {
+    const dest = destinationName ?? query ?? "Edinburgh";
+    url = mapDirectionsUrl(dest, id ?? undefined);
+  } else if (id) {
+    url = mapPlaceUrl(id);
+  } else if (query) {
+    url = mapSearchUrl(query);
+  } else if (fullUrl) {
+    url = fullUrl;
+  } else {
+    url = mapSearchUrl("Edinburgh");
+  }
 
   const label = children ?? (directions ? "Nawiguj do miejsca" : "Zobacz na mapie");
 
