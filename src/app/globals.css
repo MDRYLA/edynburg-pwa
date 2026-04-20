@@ -9,8 +9,8 @@
      B. Atlas:  kartograficzny, granat + matowe złoto
      C. Krew:   dark academia, głęboka czerń + tartan blood
 */
-@import "../styles/tokens-swieca.css";
-/* @import "../styles/tokens-atlas.css"; */
+/* @import "../styles/tokens-swieca.css"; */
+@import "../styles/tokens-atlas.css";
 /* @import "../styles/tokens-krew.css"; */
 
 * {
