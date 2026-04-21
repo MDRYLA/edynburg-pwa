@@ -1,7 +1,7 @@
 /* Wariant B — „Atlas".
    Kartograficzny, noc nad mapą podróżnika XIX w.
    Tła w granatach, akcent matowego złota. */
-:root {
+:root[data-palette="atlas"] {
   --bg-primary:    #0a1220;
   --bg-secondary:  #121a2c;
   --bg-elevated:   #1a2439;
@@ -30,7 +30,7 @@
 /* Wariant jasny — „Mapa za dnia". Papier kartograficzny w świetle dziennym:
    kremowy beż ze śladem zieleni, atramentowy granat jako tekst,
    przygaszone matowe złoto jako akcent. */
-:root[data-theme="light"] {
+:root[data-palette="atlas"][data-theme="light"] {
   --bg-primary:    #ede4ce;
   --bg-secondary:  #e3d9bf;
   --bg-elevated:   #d8cda9;

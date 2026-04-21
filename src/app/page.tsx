@@ -52,7 +52,7 @@ export default function Home() {
                 aria-hidden
               />
               <div>
-                <p className="font-display text-lg leading-tight group-hover:text-accent transition-colors">
+                <p className="font-display text-lg leading-tight">
                   {label}
                 </p>
                 <p className="text-xs text-fg-muted mt-0.5">{description}</p>
@@ -66,7 +66,16 @@ export default function Home() {
 
       <footer className="text-center text-xs text-fg-muted">
         <p className="font-mono tracking-wider">08:50 — 19:20</p>
-        <p className="mt-1 italic font-display">Personal · Private · Offline-ready</p>
+        <p className="mt-1 italic font-display">
+          <a
+            href="https://mstudio.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-accent transition-colors"
+          >
+            Web design MSTUDIO
+          </a>
+        </p>
       </footer>
     </main>
   );
