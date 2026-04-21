@@ -11,7 +11,7 @@ interface Props {
 export function Header({ title, backHref = "/", rightAction }: Props) {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-bg-primary/85 border-b border-border-subtle">
-      <div className="max-w-[560px] mx-auto h-14 flex items-center justify-between pl-4 pr-16">
+      <div className="max-w-[560px] mx-auto h-14 flex items-center justify-between pl-16 pr-16">
         <Link
           href={backHref}
           className="flex items-center gap-1 text-fg-secondary hover:text-accent text-sm"
