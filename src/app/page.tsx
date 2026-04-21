@@ -43,19 +43,19 @@ export default function Home() {
             <Link
               key={href}
               href={href}
-              className="group flex flex-col items-start gap-2 p-4 border border-border-subtle bg-bg-secondary rounded-lg hover:border-accent transition-colors min-h-[108px]"
+              className="group flex flex-col items-start gap-2 p-4 border border-border-subtle bg-bg-secondary rounded-lg hover:bg-accent hover:border-accent transition-colors min-h-[108px]"
             >
               <Icon
                 size={22}
                 strokeWidth={1.5}
-                className="text-fg-muted group-hover:text-accent transition-colors"
+                className="text-fg-muted group-hover:text-bg-primary transition-colors"
                 aria-hidden
               />
               <div>
-                <p className="font-display text-lg leading-tight">
+                <p className="font-display text-lg leading-tight group-hover:text-bg-primary transition-colors">
                   {label}
                 </p>
-                <p className="text-xs text-fg-muted mt-0.5">{description}</p>
+                <p className="text-xs text-fg-muted group-hover:text-bg-primary/80 mt-0.5 transition-colors">{description}</p>
               </div>
             </Link>
           ))}
