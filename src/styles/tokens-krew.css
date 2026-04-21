@@ -1,7 +1,7 @@
 /* Wariant C — „Krew i kamień".
    Dramat, Highland gotyk, tartan blood.
    Głęboka czerń + ciemna czerwień + chłodne szarości kamienia. */
-:root {
+:root[data-palette="krew"] {
   --bg-primary:    #0c0a0a;
   --bg-secondary:  #16100f;
   --bg-elevated:   #1f1615;
@@ -25,4 +25,33 @@
   --border-strong: var(--accent);
 
   --theme-name:    "krew";
+}
+
+/* Wariant jasny — „Różany pergamin". Papier z delikatnym różem
+   (inaczej niż bursztynowy papier Świecy i morski papier Atlasu),
+   głęboki krwisty brąz jako tekst, mocna krwawa czerwień jako akcent. */
+:root[data-palette="krew"][data-theme="light"] {
+  --bg-primary:    #f4e1dc;
+  --bg-secondary:  #ead0c9;
+  --bg-elevated:   #dfc0b7;
+  --bg-surface:    #cfaba0;
+
+  --fg-primary:    #2a0f0f;
+  --fg-secondary:  #4d2020;
+  --fg-muted:      #7a4a4a;
+  --fg-faint:      #a07878;
+
+  --accent:        #8e2a2a;
+  --accent-hover:  #6e1b1b;
+  --accent-dim:    rgba(142, 42, 42, 0.14);
+
+  --moss:          #4a6144;
+  --blood:         #5c1f1f;
+  --rust:          #7a3a26;
+
+  --border-subtle: #d8b8af;
+  --border-medium: #b5928a;
+  --border-strong: var(--accent);
+
+  --theme-name:    "krew-light";
 }

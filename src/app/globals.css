@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 /* === WARIANT PALETY ===
-   Obie palety zaimportowane równolegle. Aktywna wybierana runtime
+   Trzy palety zaimportowane równolegle. Aktywna wybierana runtime
    przez atrybut data-palette na <html> (ustawia PaletteToggle
-   + inline script w layout.tsx). Wartości: "swieca" | "atlas".
+   + inline script w layout.tsx). Wartości: "swieca" | "atlas" | "krew".
    Default = "swieca" (inline script wstawia go zanim ktokolwiek kliknie).
 */
 @import "../styles/tokens-swieca.css";
 @import "../styles/tokens-atlas.css";
-/* @import "../styles/tokens-krew.css"; — wariant C poza runtime-toggle, brak trybu jasnego */
+@import "../styles/tokens-krew.css";
 
 * {
   box-sizing: border-box;
