@@ -1,7 +1,7 @@
 import { schedule } from "@/data/schedule";
 import type { ScheduleEvent } from "@/types";
 
-const toMinutes = (t: string): number => {
+export const toMinutes = (t: string): number => {
   const [h, m] = t.split(":").map(Number);
   return h * 60 + m;
 };

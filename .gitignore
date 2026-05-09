@@ -26,10 +26,16 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
+.env.*
 .env*.local
 
 # vercel
 .vercel
+
+# private notes
+_private/
+RAPORT.md
 
 # next-pwa generated files
 public/sw.js

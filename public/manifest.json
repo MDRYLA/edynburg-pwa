@@ -1,7 +1,7 @@
 {
-  "name": "Edynburg — jeden dzień",
-  "short_name": "Edynburg",
-  "description": "Prywatny towarzysz na jednodniową wycieczkę do Edynburga",
+  "name": "Edinburgh Atlas",
+  "short_name": "Atlas",
+  "description": "Edinburgh Atlas — jednodniowy towarzysz wycieczki do Edynburga (PWA).",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

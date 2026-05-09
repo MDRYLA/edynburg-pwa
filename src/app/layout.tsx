@@ -4,6 +4,9 @@ import "./globals.css";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { PaletteToggle } from "@/components/layout/PaletteToggle";
 
+// Inline pre-paint script — reads palette + theme from localStorage and sets data-* attributes
+// before React hydrates, so the page never flashes the wrong palette (no FOUC).
+// Must be inline (not next/script) because App Router defers external scripts past first paint.
 const themeInitScript = `(function(){try{var p=localStorage.getItem('edinburgh_palette')||'swieca';document.documentElement.setAttribute('data-palette',p);var t=localStorage.getItem('edinburgh_theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();`;
 
 const cormorant = Cormorant_Garamond({

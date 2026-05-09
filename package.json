@@ -1,7 +1,31 @@
 {
-  "name": "edinburgh-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "edinburgh-atlas",
+  "version": "1.0.0",
+  "private": false,
+  "description": "A hand-crafted PWA companion for a one-day trip to Edinburgh — timeline, places, restaurants, transport and tips. Offline-first, mobile-first, three palette themes, zero backend.",
+  "author": {
+    "name": "Kacper Dryla",
+    "url": "https://kacper.dryla.pl"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MDRYLA/edynburg-pwa.git"
+  },
+  "homepage": "https://edynburg-atlas.vercel.app",
+  "keywords": [
+    "edinburgh",
+    "travel-app",
+    "pwa",
+    "next-js",
+    "tailwind",
+    "offline-first",
+    "scotland",
+    "trip-planner"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
