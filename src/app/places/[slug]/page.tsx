@@ -22,13 +22,15 @@ export default function PlacePage({ params }: { params: { slug: string } }) {
   const scheduleIdx = schedule.findIndex(
     (e) => e.type === "attraction" && e.placeId === place.slug
   );
-  const nextAttractionIdx = schedule.findIndex(
-    (e, i) => i > scheduleIdx && e.type === "attraction"
-  );
-  const nextPlace =
-    nextAttractionIdx > -1 && schedule[nextAttractionIdx].placeId
-      ? places[schedule[nextAttractionIdx].placeId!]
-      : null;
+  const nextPlace = (() => {
+    if (scheduleIdx < 0) return null;
+    const nextIdx = schedule.findIndex(
+      (e, i) => i > scheduleIdx && e.type === "attraction"
+    );
+    if (nextIdx < 0) return null;
+    const nextId = schedule[nextIdx].placeId;
+    return nextId ? (places[nextId] ?? null) : null;
+  })();
 
   return (
     <>

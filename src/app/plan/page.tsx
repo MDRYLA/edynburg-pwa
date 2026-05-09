@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { Divider } from "@/components/ui/Divider";
@@ -8,7 +8,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { TimelineEvent } from "@/components/timeline/TimelineEvent";
 import { ProgressBar } from "@/components/timeline/ProgressBar";
 import { schedule } from "@/data/schedule";
-import { getCurrentEvent, getProgress, toMinutes } from "@/lib/time";
+import { getCurrentEvent, getProgress, nowMinutes, toMinutes } from "@/lib/time";
 import { getVisited, toggleVisited } from "@/lib/storage";
 
 export default function PlanPage() {
@@ -23,13 +23,15 @@ export default function PlanPage() {
   }, []);
 
   const currentEvent = now ? getCurrentEvent(now) : null;
-  const currentMinutes = now ? now.getHours() * 60 + now.getMinutes() : -1;
-  const { visited, total } = getProgress(visitedIds);
+  const currentMinutes = now ? nowMinutes(now) : -1;
+  const { visited, total } = useMemo(
+    () => getProgress(visitedIds),
+    [visitedIds]
+  );
 
-  const handleToggle = (id: string) => {
-    const next = toggleVisited(id);
-    setVisitedIds(next);
-  };
+  const handleToggle = useCallback((id: string) => {
+    setVisitedIds(toggleVisited(id));
+  }, []);
 
   return (
     <>

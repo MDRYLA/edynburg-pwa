@@ -6,8 +6,11 @@ export const toMinutes = (t: string): number => {
   return h * 60 + m;
 };
 
+export const nowMinutes = (now: Date = new Date()): number =>
+  now.getHours() * 60 + now.getMinutes();
+
 export function getCurrentEvent(now: Date = new Date()): ScheduleEvent | null {
-  const current = now.getHours() * 60 + now.getMinutes();
+  const current = nowMinutes(now);
   return (
     schedule.find(
       (e) => current >= toMinutes(e.timeStart) && current < toMinutes(e.timeEnd)
@@ -16,12 +19,12 @@ export function getCurrentEvent(now: Date = new Date()): ScheduleEvent | null {
 }
 
 export function getNextEvent(now: Date = new Date()): ScheduleEvent | null {
-  const current = now.getHours() * 60 + now.getMinutes();
+  const current = nowMinutes(now);
   return schedule.find((e) => toMinutes(e.timeStart) > current) ?? null;
 }
 
 export function minutesUntil(timeStr: string, now: Date = new Date()): number {
-  return toMinutes(timeStr) - (now.getHours() * 60 + now.getMinutes());
+  return toMinutes(timeStr) - nowMinutes(now);
 }
 
 export function formatDuration(minutes: number): string {
@@ -32,12 +35,12 @@ export function formatDuration(minutes: number): string {
 }
 
 export function isBeforeDay(now: Date = new Date()): boolean {
-  return now.getHours() * 60 + now.getMinutes() < toMinutes(schedule[0].timeStart);
+  return nowMinutes(now) < toMinutes(schedule[0].timeStart);
 }
 
 export function isAfterDay(now: Date = new Date()): boolean {
   const last = schedule[schedule.length - 1];
-  return now.getHours() * 60 + now.getMinutes() >= toMinutes(last.timeEnd);
+  return nowMinutes(now) >= toMinutes(last.timeEnd);
 }
 
 export function getProgress(visitedIds: string[]): { visited: number; total: number } {

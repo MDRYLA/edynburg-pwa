@@ -13,6 +13,8 @@ const withPWA = nextPWA({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // SSG-only build, no <Image> component used (only inline SVG illustrations).
+  // Disabling optimization avoids the runtime cost without losing anything.
   images: { unoptimized: true },
 };
 
