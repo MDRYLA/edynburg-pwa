@@ -99,20 +99,20 @@ export default function PlacePage({ params }: { params: { slug: string } }) {
               <Eyebrow>Następne w planie</Eyebrow>
               <Link
                 href={`/places/${nextPlace.slug}`}
-                className="group mt-3 flex items-center justify-between gap-3 border border-border-subtle bg-bg-secondary rounded-lg p-4 hover:border-accent transition-colors"
+                className="group mt-3 flex items-center justify-between gap-3 border border-border-subtle bg-bg-secondary rounded-lg p-4 hover:bg-accent hover:border-accent transition-colors"
               >
                 <div>
-                  <p className="font-display text-xl leading-tight group-hover:text-accent transition-colors">
+                  <p className="font-display text-xl leading-tight group-hover:text-bg-primary transition-colors">
                     {nextPlace.name}
                   </p>
-                  <p className="text-xs text-fg-muted mt-1 font-mono">
+                  <p className="text-xs text-fg-muted group-hover:text-bg-primary/80 mt-1 font-mono transition-colors">
                     {nextPlace.duration}
                   </p>
                 </div>
                 <ArrowRight
                   size={18}
                   strokeWidth={1.75}
-                  className="shrink-0 text-fg-muted group-hover:text-accent transition-colors"
+                  className="shrink-0 text-fg-muted group-hover:text-bg-primary transition-colors"
                   aria-hidden
                 />
               </Link>

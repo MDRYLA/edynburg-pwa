@@ -22,9 +22,9 @@ interface Props {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-accent text-bg-primary hover:bg-accent-hover active:brightness-95 border border-accent",
+    "bg-accent text-bg-primary hover:bg-accent-hover hover:text-fg-primary active:brightness-95 border border-accent",
   secondary:
-    "bg-transparent text-fg-primary border border-border-medium hover:border-accent hover:text-accent",
+    "bg-transparent text-fg-primary border border-border-medium hover:bg-accent hover:border-accent hover:text-bg-primary",
   link: "bg-transparent text-accent hover:text-accent-hover underline underline-offset-4 decoration-dotted px-0 py-0 border-0",
 };
 

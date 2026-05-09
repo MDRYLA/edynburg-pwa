@@ -118,7 +118,7 @@ export function TimelineEvent({
           {event.type === "attraction" && place && (
             <Link
               href={`/places/${place.slug}`}
-              className="text-xs uppercase tracking-wider text-accent hover:text-accent-hover border border-border-medium hover:border-accent rounded-md px-3 py-1.5"
+              className="text-xs uppercase tracking-wider text-accent border border-border-medium rounded-md px-3 py-1.5 transition-colors hover:bg-accent hover:border-accent hover:text-bg-primary"
             >
               Szczegóły →
             </Link>
@@ -126,7 +126,7 @@ export function TimelineEvent({
           {event.type === "meal" && (
             <Link
               href="/food"
-              className="text-xs uppercase tracking-wider text-accent hover:text-accent-hover border border-border-medium hover:border-accent rounded-md px-3 py-1.5"
+              className="text-xs uppercase tracking-wider text-accent border border-border-medium rounded-md px-3 py-1.5 transition-colors hover:bg-accent hover:border-accent hover:text-bg-primary"
             >
               Zobacz opcje →
             </Link>

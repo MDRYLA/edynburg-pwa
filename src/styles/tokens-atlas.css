@@ -1,7 +1,7 @@
 /* Wariant B — „Atlas".
    Kartograficzny, noc nad mapą podróżnika XIX w.
    Tła w granatach, akcent matowego złota. */
-:root {
+:root[data-palette="atlas"] {
   --bg-primary:    #0a1220;
   --bg-secondary:  #121a2c;
   --bg-elevated:   #1a2439;
@@ -25,4 +25,33 @@
   --border-strong: var(--accent);
 
   --theme-name:    "atlas";
+}
+
+/* Wariant jasny — „Mapa na morzu". Chłodny papier morski w świetle dziennym:
+   jasny błękit z szarym woskiem, atramentowy granat jako tekst,
+   marynarski granat jako akcent (żeby wyraźnie różnić się od Świecy jasnej). */
+:root[data-palette="atlas"][data-theme="light"] {
+  --bg-primary:    #dde7f2;
+  --bg-secondary:  #ccd9ea;
+  --bg-elevated:   #bccada;
+  --bg-surface:    #aabbcf;
+
+  --fg-primary:    #0a1a33;
+  --fg-secondary:  #25365a;
+  --fg-muted:      #4a5c80;
+  --fg-faint:      #7a89a8;
+
+  --accent:        #1f4a7c;
+  --accent-hover:  #163866;
+  --accent-dim:    rgba(31, 74, 124, 0.14);
+
+  --moss:          #3e6b5a;
+  --blood:         #6a2f3a;
+  --rust:          #7a5632;
+
+  --border-subtle: #a8bbd2;
+  --border-medium: #8299b5;
+  --border-strong: var(--accent);
+
+  --theme-name:    "atlas-light";
 }

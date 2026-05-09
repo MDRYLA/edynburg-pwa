@@ -3,15 +3,14 @@
 @tailwind utilities;
 
 /* === WARIANT PALETY ===
-   Aktywna paleta: A "Świeca" (oryginał z 02-design.md).
-   Żeby zmienić — zakomentuj linię i odkomentuj inną:
-     A. Świeca: medieval, bursztyn
-     B. Atlas:  kartograficzny, granat + matowe złoto
-     C. Krew:   dark academia, głęboka czerń + tartan blood
+   Trzy palety zaimportowane równolegle. Aktywna wybierana runtime
+   przez atrybut data-palette na <html> (ustawia PaletteToggle
+   + inline script w layout.tsx). Wartości: "swieca" | "atlas" | "krew".
+   Default = "swieca" (inline script wstawia go zanim ktokolwiek kliknie).
 */
 @import "../styles/tokens-swieca.css";
-/* @import "../styles/tokens-atlas.css"; */
-/* @import "../styles/tokens-krew.css"; */
+@import "../styles/tokens-atlas.css";
+@import "../styles/tokens-krew.css";
 
 * {
   box-sizing: border-box;
@@ -24,7 +23,7 @@ body {
   background: var(--bg-primary);
   color: var(--fg-primary);
   font-family: var(--font-body), system-ui, -apple-system, sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,4 +1,4 @@
-import type { TransportOption } from "@/types";
+import type { DayTicket, TransportOption } from "@/types";
 
 export const transportToCity: TransportOption = {
   id: "tram-to-city",
@@ -72,7 +72,7 @@ export const transportToAirport: TransportOption = {
   cons: ["Trzeba zejść do West End (nie wsiadacie przy zamku)"],
 };
 
-export const networkDayTicket = {
+export const networkDayTicket: DayTicket = {
   name: "Network DAYticket",
   price: "£12.50",
   savings: "£2.50 vs 2×single",

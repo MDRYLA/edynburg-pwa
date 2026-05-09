@@ -1,6 +1,6 @@
 /* Wariant A — „Świeca" (oryginał z 02-design.md).
    Medieval, dostojny, świeca w zamku. */
-:root {
+:root[data-palette="swieca"] {
   --bg-primary:    #0f0e0c;
   --bg-secondary:  #1a1815;
   --bg-elevated:   #25211c;
@@ -28,7 +28,7 @@
 
 /* Wariant jasny — pergamin / stary papier. Zachowuje charakter „Świecy",
    tylko w odwróconej tonacji: ciepła kość + atramentowy tekst + przygaszony bursztyn. */
-:root[data-theme="light"] {
+:root[data-palette="swieca"][data-theme="light"] {
   --bg-primary:    #f5ecd7;
   --bg-secondary:  #ede2c9;
   --bg-elevated:   #e4d7ba;

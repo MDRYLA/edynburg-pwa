@@ -2,8 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { PaletteToggle } from "@/components/layout/PaletteToggle";
 
-const themeInitScript = `(function(){try{var t=localStorage.getItem('edinburgh_theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();`;
+// Inline pre-paint script — reads palette + theme from localStorage and sets data-* attributes
+// before React hydrates, so the page never flashes the wrong palette (no FOUC).
+// Must be inline (not next/script) because App Router defers external scripts past first paint.
+const themeInitScript = `(function(){try{var p=localStorage.getItem('edinburgh_palette')||'swieca';document.documentElement.setAttribute('data-palette',p);var t=localStorage.getItem('edinburgh_theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();`;
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
@@ -65,11 +69,13 @@ export default function RootLayout({
     <html
       lang="pl"
       className={`${cormorant.variable} ${inter.variable} ${jetBrainsMono.variable}`}
+      suppressHydrationWarning
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
+        <PaletteToggle />
         <ThemeToggle />
         {children}
       </body>

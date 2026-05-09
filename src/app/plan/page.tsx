@@ -8,7 +8,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { TimelineEvent } from "@/components/timeline/TimelineEvent";
 import { ProgressBar } from "@/components/timeline/ProgressBar";
 import { schedule } from "@/data/schedule";
-import { getCurrentEvent, getProgress } from "@/lib/time";
+import { getCurrentEvent, getProgress, toMinutes } from "@/lib/time";
 import { getVisited, toggleVisited } from "@/lib/storage";
 
 export default function PlanPage() {
@@ -52,13 +52,9 @@ export default function PlanPage() {
         <ol className="space-y-0 list-none p-0">
           {schedule.map((event, idx) => {
             const isLast = idx === schedule.length - 1;
-            const toMin = (t: string) => {
-              const [h, m] = t.split(":").map(Number);
-              return h * 60 + m;
-            };
             const isCurrent = currentEvent?.id === event.id;
             const isPast =
-              currentMinutes >= 0 && toMin(event.timeEnd) <= currentMinutes;
+              currentMinutes >= 0 && toMinutes(event.timeEnd) <= currentMinutes;
             const isVisited = visitedIds.includes(event.id);
             return (
               <TimelineEvent

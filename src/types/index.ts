@@ -70,3 +70,12 @@ export interface TransportOption {
   pros: string[];
   cons?: string[];
 }
+
+export interface DayTicket {
+  name: string;
+  price: string;
+  savings: string;
+  validity: string;
+  note: string;
+  buyUrl: string;
+}
