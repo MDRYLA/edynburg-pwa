@@ -37,6 +37,10 @@ yarn-error.log*
 _private/
 RAPORT.md
 
+# workflow audit artifacts (kept local, not for public repo)
+docs/audits/
+docs/handoffs/
+
 # next-pwa generated files
 public/sw.js
 public/sw.js.map
