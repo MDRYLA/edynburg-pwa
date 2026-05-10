@@ -10,11 +10,8 @@ const withPWA = nextPWA({
   },
 });
 
-// Defense-in-depth security headers for an SSG, zero-backend PWA.
-// CSP allows 'unsafe-inline' for the pre-paint theme/palette init script in
-// layout.tsx (literal constant, no user input) and for Tailwind/Next.js inline
-// styles. fonts.gstatic.com / fonts.googleapis.com kept open as a safety net
-// for next/font/google fallback paths.
+// Inline allowed for the pre-paint theme script and Tailwind/Next inline styles.
+// Fonts allowlisted as a safety net for next/font/google fallback paths.
 const csp = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline'",

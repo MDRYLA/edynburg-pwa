@@ -187,4 +187,4 @@ Route (app)                 Size      First Load JS
 shared by all               89.5 kB
 ```
 
-16 prerendered pages, no dynamic rendering. The whole app + service worker fits well under the threshold for instant boot on a 4G connection.
+13 prerendered pages (`/`, `/food`, `/places`, six `/places/[slug]` paths, `/plan`, `/tips`, `/transport`, plus `/_not-found`), no dynamic rendering. The whole app + service worker fits well under the threshold for instant boot on a 4G connection.
