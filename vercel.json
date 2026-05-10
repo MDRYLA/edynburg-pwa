@@ -2,25 +2,25 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "edynburg-pwa.vercel.app"
         }
       ],
-      "destination": "https://edynburg.dryla.pl/:path*",
+      "destination": "https://edynburg.dryla.pl/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "edynburg-atlas.vercel.app"
         }
       ],
-      "destination": "https://edynburg.dryla.pl/:path*",
+      "destination": "https://edynburg.dryla.pl/$1",
       "permanent": true
     }
   ]
