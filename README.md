@@ -2,7 +2,7 @@
 
 > A hand-crafted PWA companion for a one-day trip to Edinburgh — timeline, places guide, restaurants, transport and tips. Offline-first, mobile-first, three palette themes, zero backend.
 
-**Live demo:** [edynburg-atlas.vercel.app](https://edynburg-atlas.vercel.app)
+**Live demo:** [edynburg.dryla.pl](https://edynburg.dryla.pl)
 
 <table>
   <tr>
@@ -112,4 +112,4 @@ GitHub: [@MDRYLA](https://github.com/MDRYLA)
 
 Stack: Next.js 14, TypeScript, Tailwind, `@ducanh2912/next-pwa`, lucide-react. Wszystkie dane (15-eventowy timeline, 6 atrakcji, 3 restauracje, transport, tipy) trzymane w plikach TypeScript w `src/data/` — żadnego CMS-a, żadnej bazy.
 
-Live demo: [edynburg-atlas.vercel.app](https://edynburg-atlas.vercel.app)
+Live demo: [edynburg.dryla.pl](https://edynburg.dryla.pl)

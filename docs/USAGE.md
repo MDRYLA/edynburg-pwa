@@ -4,7 +4,7 @@ Edinburgh Atlas is a single-purpose PWA — built for one specific day in one sp
 
 ## Open it
 
-[edynburg-atlas.vercel.app](https://edynburg-atlas.vercel.app)
+[edynburg.dryla.pl](https://edynburg.dryla.pl)
 
 Or run locally — see [`README.md → Setup`](../README.md#setup).
 
